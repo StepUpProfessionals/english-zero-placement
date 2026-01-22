@@ -49,18 +49,19 @@ body{
 }
 
 .progress{
-  flex:1;
+  width:100%;
   height:10px;
-  background:#eef2f7;
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
   border-radius:999px;
   overflow:hidden;
-  border:1px solid var(--border);
 }
-.bar{
+.progress-bar{
   height:100%;
   width:0%;
-  background:var(--btn);
-  transition:width .25s ease;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  border-radius:999px;
+  transition: width .25s ease;
 }
 
 .qtitle{margin:10px 0 8px;font-size:20px}
