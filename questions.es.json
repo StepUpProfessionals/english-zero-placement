@@ -7,7 +7,7 @@
       "prompt": "Elige la opción correcta:",
       "question": "She ____ to work every day.",
       "options": ["go", "goes", "going", "gone"],
-      "answerIndex": 1,
+      "answerIndex": 1
     },
     {
       "id": 2,
@@ -15,7 +15,7 @@
       "prompt": "Elige la opción correcta:",
       "question": "I ____ this movie before.",
       "options": ["see", "saw", "have seen", "am seeing"],
-      "answerIndex": 2,
+      "answerIndex": 2
     },
     {
       "id": 3,
@@ -23,7 +23,7 @@
       "prompt": "Elige la opción correcta:",
       "question": "If it ____ tomorrow, we will stay home.",
       "options": ["rains", "rained", "will rain", "rain"],
-      "answerIndex": 0,
+      "answerIndex": 0
     },
     {
       "id": 4,
@@ -31,7 +31,7 @@
       "prompt": "Elige la opción correcta:",
       "question": "There ____ many people at the meeting.",
       "options": ["was", "were", "is", "be"],
-      "answerIndex": 1,
+      "answerIndex": 1
     },
     {
       "id": 5,
@@ -39,7 +39,7 @@
       "prompt": "Elige la opción correcta:",
       "question": "He’s the person ____ helped me.",
       "options": ["which", "who", "where", "what"],
-      "answerIndex": 1,
+      "answerIndex": 1
     },
     {
       "id": 6,
@@ -47,7 +47,7 @@
       "prompt": "Elige la opción correcta:",
       "question": "I don’t have ____ time today.",
       "options": ["many", "much", "a few", "several"],
-      "answerIndex": 1,
+      "answerIndex": 1
     },
     {
       "id": 7,
@@ -55,7 +55,7 @@
       "prompt": "Elige la opción correcta:",
       "question": "She ____ dinner when I called.",
       "options": ["cooks", "cooked", "was cooking", "has cooked"],
-      "answerIndex": 2,
+      "answerIndex": 2
     },
     {
       "id": 8,
@@ -63,7 +63,7 @@
       "prompt": "Elige la opción correcta:",
       "question": "You ____ smoke here. It’s forbidden.",
       "options": ["don’t have to", "must", "mustn’t", "should"],
-      "answerIndex": 2,
+      "answerIndex": 2
     },
     {
       "id": 9,
@@ -71,7 +71,7 @@
       "prompt": "Elige la opción correcta:",
       "question": "This is ____ best coffee I’ve ever had.",
       "options": ["a", "an", "the", "— (no article)"],
-      "answerIndex": 2,
+      "answerIndex": 2
     },
     {
       "id": 10,
@@ -79,7 +79,7 @@
       "prompt": "Elige la opción correcta:",
       "question": "I wish I ____ more time.",
       "options": ["have", "had", "will have", "am having"],
-      "answerIndex": 1,
+      "answerIndex": 1
     }
   ]
 }
