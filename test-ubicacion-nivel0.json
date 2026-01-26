@@ -3,12 +3,12 @@
   "title": "Test de Ubicación – Inglés desde Cero",
   "description": "Test corto para ubicar al estudiante y recomendar la lección de inicio.",
   "duration_minutes": 5,
-  "instructions": "Elige la opción que consideres correcta. Si no sabes la respuesta, puedes marcar 'No sé'.",
+  "instructions": "Elija la opción que considere correcta. Si no sabe la respuesta, puede marcar 'No sé'.",
   "questions": [
     {
       "id": 1,
       "type": "mcq",
-      "question": "Elige la frase correcta:",
+      "question": "Elija la frase correcta:",
       "options": [
         "I am 35 years old.",
         "I have 35 years.",
@@ -22,7 +22,7 @@
     {
       "id": 2,
       "type": "mcq",
-      "question": "¿Cuál frase usarías para presentarte?",
+      "question": "¿Cuál frase usaría para presentarte?",
       "options": [
         "My name is Ana. I am from Colombia.",
         "The name my is Ana. I live in Colombia.",
@@ -36,7 +36,7 @@
     {
       "id": 3,
       "type": "mcq",
-      "question": "Completa la frase: I ___ in an office.",
+      "question": "Complete la frase: I ___ in an office.",
       "options": [
         "work",
         "works",
@@ -50,7 +50,7 @@
     {
       "id": 4,
       "type": "mcq",
-      "question": "Si alguien te pregunta: “Where do you live?”, ¿qué respuesta es correcta?",
+      "question": "Si alguien le pregunta: “Where do you live?”, ¿qué respuesta es correcta?",
       "options": [
         "I live in Laureles.",
         "I living Laureles.",
@@ -105,7 +105,7 @@
     {
       "id": 8,
       "type": "mcq",
-      "question": "Elige la opción correcta: There ____ many people at the meeting.",
+      "question": "Elija la opción correcta: There ____ many people at the meeting.",
       "options": [
         "was",
         "were",
@@ -119,7 +119,7 @@
     {
       "id": 9,
       "type": "mcq",
-      "question": "Elige la opción correcta: I don’t have ____ time today.",
+      "question": "Elija la opción correcta: I don’t have ____ time today.",
       "options": [
         "many",
         "much",
@@ -133,7 +133,7 @@
     {
       "id": 10,
       "type": "self_assessment",
-      "question": "Cuando escuchas inglés, tú…",
+      "question": "Cuando escucha inglés, …",
       "options": [
         "Me bloqueo totalmente.",
         "Entiendo algunas palabras.",
@@ -152,3 +152,4 @@
     ]
   }
 }
+
