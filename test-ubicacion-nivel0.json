@@ -77,7 +77,7 @@
     {
       "id": 6,
       "type": "mcq",
-      "question": "Elige la opción correcta: She ____ to work every day.",
+      "question": "Elija la opción correcta: She ____ to work every day.",
       "options": [
         "go",
         "goes",
@@ -152,5 +152,6 @@
     ]
   }
 }
+
 
 
