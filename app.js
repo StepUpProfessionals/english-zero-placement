@@ -71,24 +71,40 @@ function getScore(){
   return correct;
 }
 
+function getMaxScore(){
+  // Cuenta solo las preguntas que tienen correctAnswerIndex (las evaluables)
+  return STATE.data.questions.filter(q => q.correctAnswerIndex !== undefined).length;
+}
+
 function showResult(){
   const score = getScore();
+  const maxScore = getMaxScore(); // debería ser 9
 
+  // Muestra puntaje sin juicio
+  if (el("scoreText")) {
+    el("scoreText").textContent = `Respuestas correctas: ${score} de ${maxScore}`;
+  }
+
+  // Texto de ruta (ajustado a 0–3, 4–6, 7–9)
   let routeText = "Con base en sus respuestas, le indicaremos por dónde empezar.";
-  if (score <= 2) {
+
+  if (score <= 3) {
     routeText = "Usted puede iniciar desde la Lección 1, diseñada para personas que empiezan desde cero.";
-  } else if (score <= 4) {
-    routeText = "Usted cuenta con algunas bases. Recomendamos iniciar desde una lección intermedia para organizar su conocimiento.";
+  } else if (score <= 6) {
+    routeText = "Usted cuenta con algunas bases. Recomendamos iniciar desde una lección intermedia para organizar su conocimiento y avanzar con seguridad.";
   } else {
-    routeText = "Usted tiene una base funcional. Podemos ayudarle a consolidar y avanzar con mayor seguridad.";
+    routeText = "Usted tiene una base sólida. Podemos ayudarle a consolidar y avanzar con mayor precisión (fluidez, comprensión y uso natural).";
   }
 
   el("routeTitle").textContent = "Ruta recomendada";
   el("routeDesc").textContent = routeText;
 
   el("ctaBtn").textContent = "Escribirme por WhatsApp";
-  el("ctaBtn").href =
-    "https://wa.me/573167850234?text=Hola%2C%20realic%C3%A9%20el%20Test%20de%20Ubicaci%C3%B3n%20y%20quisiera%20saber%20por%20d%C3%B3nde%20empezar.";
+  const waMessage = `Hola, realicé el Test de Ubicación y obtuve ${score} de ${maxScore} respuestas correctas. Quisiera saber por dónde empezar.`;
+
+el("ctaBtn").href =
+  "https://wa.me/573167850234?text=" + encodeURIComponent(waMessage);
+
 
   el("card").classList.add("hidden");
   el("result").classList.remove("hidden");
