@@ -22,7 +22,7 @@
     {
       "id": 2,
       "type": "mcq",
-      "question": "¿Cuál frase usaría para presentarte?",
+      "question": "¿Cuál frase usaría para presentarse?",
       "options": [
         "My name is Ana. I am from Colombia.",
         "The name my is Ana. I live in Colombia.",
@@ -152,4 +152,5 @@
     ]
   }
 }
+
 
