@@ -1,85 +1,121 @@
 {
-  "title": "Test de Gramática (MVP)",
+  "id": "test_ubicacion_nivel0",
+  "title": "Test de Ubicación – Inglés desde Cero",
+  "description": "Test corto para ubicar al estudiante y recomendar la lección de inicio.",
+  "duration_minutes": 3,
+  "instructions": "Elige la opción que consideres correcta. Si no sabes la respuesta, puedes marcar 'No sé'.",
   "questions": [
     {
       "id": 1,
       "type": "mcq",
-      "prompt": "Elige la opción correcta:",
-      "question": "She ____ to work every day.",
-      "options": ["go", "goes", "going", "gone"],
-      "answerIndex": 1
+      "question": "Elige la frase correcta:",
+      "options": [
+        "I am 35 years old.",
+        "I have 35 years.",
+        "I am 35 years.",
+        "I have years 35.",
+        "No sé"
+      ],
+      "correctAnswerIndex": 0,
+      "skill": "basic_structure"
     },
     {
       "id": 2,
       "type": "mcq",
-      "prompt": "Elige la opción correcta:",
-      "question": "I ____ this movie before.",
-      "options": ["see", "saw", "have seen", "am seeing"],
-      "answerIndex": 2
+      "question": "¿Cuál frase usarías para presentarte?",
+      "options": [
+        "My name is Ana. I am from Colombia.",
+        "The name my is Ana. I live in Colombia.",
+        "I’m Ana. I from Colombia.",
+        "Name Ana, country Colombia.",
+        "No sé"
+      ],
+      "correctAnswerIndex": 0,
+      "skill": "basic_introduction"
     },
     {
       "id": 3,
       "type": "mcq",
-      "prompt": "Elige la opción correcta:",
-      "question": "If it ____ tomorrow, we will stay home.",
-      "options": ["rains", "rained", "will rain", "rain"],
-      "answerIndex": 0
+      "question": "Completa la frase: I ___ in an office.",
+      "options": [
+        "work",
+        "works",
+        "working",
+        "worked",
+        "No sé"
+      ],
+      "correctAnswerIndex": 0,
+      "skill": "present_simple"
     },
     {
       "id": 4,
       "type": "mcq",
-      "prompt": "Elige la opción correcta:",
-      "question": "There ____ many people at the meeting.",
-      "options": ["was", "were", "is", "be"],
-      "answerIndex": 1
+      "question": "Si alguien te pregunta: “Where do you live?”, ¿qué respuesta es correcta?",
+      "options": [
+        "I live in Laureles.",
+        "I living Laureles.",
+        "I am live Laureles.",
+        "Live Laureles.",
+        "No sé"
+      ],
+      "correctAnswerIndex": 0,
+      "skill": "basic_comprehension"
     },
     {
       "id": 5,
       "type": "mcq",
-      "prompt": "Elige la opción correcta:",
-      "question": "He’s the person ____ helped me.",
-      "options": ["which", "who", "where", "what"],
-      "answerIndex": 1
+      "question": "¿Cuál es el orden correcto?",
+      "options": [
+        "Am I an engineer.",
+        "I am an engineer.",
+        "I am engineer.",
+        "No sé"
+      ],
+      "correctAnswerIndex": 1,
+      "skill": "word_order"
     },
     {
       "id": 6,
       "type": "mcq",
-      "prompt": "Elige la opción correcta:",
-      "question": "I don’t have ____ time today.",
-      "options": ["many", "much", "a few", "several"],
-      "answerIndex": 1
+      "question": "Elige la frase correcta:",
+      "options": [
+        "Yesterday I worked.",
+        "Yesterday I work.",
+        "Yesterday I did work.",
+        "Yesterday I working.",
+        "No sé"
+      ],
+      "correctAnswerIndex": 0,
+      "skill": "past_simple"
     },
     {
       "id": 7,
-      "type": "mcq",
-      "prompt": "Elige la opción correcta:",
-      "question": "She ____ dinner when I called.",
-      "options": ["cooks", "cooked", "was cooking", "has cooked"],
-      "answerIndex": 2
-    },
-    {
-      "id": 8,
-      "type": "mcq",
-      "prompt": "Elige la opción correcta:",
-      "question": "You ____ smoke here. It’s forbidden.",
-      "options": ["don’t have to", "must", "mustn’t", "should"],
-      "answerIndex": 2
-    },
-    {
-      "id": 9,
-      "type": "mcq",
-      "prompt": "Elige la opción correcta:",
-      "question": "This is ____ best coffee I’ve ever had.",
-      "options": ["a", "an", "the", "— (no article)"],
-      "answerIndex": 2
-    },
-    {
-      "id": 10,
-      "type": "mcq",
-      "prompt": "Elige la opción correcta:",
-      "question": "I wish I ____ more time.",
-      "options": ["have", "had", "will have", "am having"],
-      "answerIndex": 1
+      "type": "self_assessment",
+      "question": "Cuando escuchas inglés, tú…",
+      "options": [
+        "Me bloqueo totalmente.",
+        "Entiendo algunas palabras.",
+        "Entiendo la idea general.",
+        "Entiendo bastante bien."
+      ],
+      "scored": false
     }
-  ]
+  ],
+  "scoring": {
+    "max_score": 6,
+    "rules": [
+      {
+        "range": [0, 2],
+        "recommendation": "Nivel 0 real — iniciar en Lección 1"
+      },
+      {
+        "range": [3, 4],
+        "recommendation": "Bases desordenadas — iniciar en Lección 2 o 3"
+      },
+      {
+        "range": [5, 6],
+        "recommendation": "Bases funcionales — iniciar en Lección 4 o 5"
+      }
+    ]
+  }
 }
