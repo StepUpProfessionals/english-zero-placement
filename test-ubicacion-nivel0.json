@@ -133,7 +133,7 @@
     {
       "id": 10,
       "type": "self_assessment",
-      "question": "Cuando escucha inglés, …",
+      "question": "Cuando escucho inglés, …",
       "options": [
         "Me bloqueo totalmente.",
         "Entiendo algunas palabras.",
@@ -152,6 +152,7 @@
     ]
   }
 }
+
 
 
 
