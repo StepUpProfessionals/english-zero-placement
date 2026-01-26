@@ -74,9 +74,6 @@
       "correctAnswerIndex": 1,
       "skill": "word_order"
     },
-
-    /* ---- BLOQUE DE COMPLEJIDAD MEDIA (GRAMÁTICA FUNCIONAL) ---- */
-
     {
       "id": 6,
       "type": "mcq",
@@ -133,9 +130,6 @@
       "correctAnswerIndex": 1,
       "skill": "much_many"
     },
-
-    /* ---- AUTOPERCEPCIÓN (NO SE CALIFICA) ---- */
-
     {
       "id": 10,
       "type": "self_assessment",
@@ -152,18 +146,9 @@
   "scoring": {
     "max_score": 9,
     "rules": [
-      {
-        "range": [0, 3],
-        "recommendation": "Nivel inicial — iniciar desde la Lección 1"
-      },
-      {
-        "range": [4, 6],
-        "recommendation": "Bases funcionales — iniciar desde Lección 2 o 3"
-      },
-      {
-        "range": [7, 9],
-        "recommendation": "Base sólida — iniciar desde Lección 4 o avanzar con consolidación"
-      }
+      { "range": [0, 3], "recommendation": "Nivel inicial — iniciar desde la Lección 1" },
+      { "range": [4, 6], "recommendation": "Bases funcionales — iniciar desde Lección 2 o 3" },
+      { "range": [7, 9], "recommendation": "Base sólida — iniciar desde Lección 4 o avanzar con consolidación" }
     ]
   }
 }
