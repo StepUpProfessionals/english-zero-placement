@@ -1,16 +1,15 @@
 const STATE = {
   data: null,
   index: 0,
-  answers: [], // guarda answerIndex elegido (o null)
+  answers: []
 };
 
 const el = (id) => document.getElementById(id);
-
-function clamp(n, min, max){ return Math.max(min, Math.min(max, n)); }
+const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
 
 async function loadQuestions(){
-  const res = await fetch("questions.es.json");
-  if(!res.ok) throw new Error("No se pudo cargar questions.es.json");
+  const res = await fetch("test-ubicacion-nivel0.json");
+  if(!res.ok) throw new Error("No se pudo cargar el archivo del test.");
   const data = await res.json();
   STATE.data = data;
   STATE.answers = Array(data.questions.length).fill(null);
@@ -22,94 +21,74 @@ function render(){
   const i = clamp(STATE.index, 0, total - 1);
   const q = qList[i];
 
-  el("progressText").textContent = `Pregunta ${i+1}/${total}`;
-  el("progressBar").style.width = `${Math.round(((i+1)/total)*100)}%`;
+  el("progressText").textContent = `Pregunta ${i + 1} de ${total}`;
+  el("progressBar").style.width = `${Math.round(((i + 1) / total) * 100)}%`;
 
   el("questionTitle").textContent = q.question;
-  el("questionHint").textContent = q.hint ? q.hint : "";
+  el("questionHint").textContent = "";
 
   const optionsWrap = el("options");
   optionsWrap.innerHTML = "";
 
   q.options.forEach((opt, idx) => {
-    const div = document.createElement("label");
-    div.className = "option";
+    const label = document.createElement("label");
+    label.className = "option";
 
     const input = document.createElement("input");
     input.type = "radio";
     input.name = "opt";
-    input.checked = (STATE.answers[i] === idx);
+    input.checked = STATE.answers[i] === idx;
 
     const span = document.createElement("span");
     span.textContent = opt;
 
-    div.appendChild(input);
-    div.appendChild(span);
+    label.appendChild(input);
+    label.appendChild(span);
 
-    if (STATE.answers[i] === idx) div.classList.add("selected");
+    if (STATE.answers[i] === idx) label.classList.add("selected");
 
-    div.addEventListener("click", () => {
+    label.addEventListener("click", () => {
       STATE.answers[i] = idx;
-      render(); // re-render para marcar seleccionado
+      render();
     });
 
-    optionsWrap.appendChild(div);
+    optionsWrap.appendChild(label);
   });
 
-  // botones
-  el("backBtn").disabled = (i === 0);
-  const hasAnswer = STATE.answers[i] !== null;
-  el("nextBtn").disabled = !hasAnswer;
-
-  // si es última pregunta, cambia texto del botón
-  el("nextBtn").textContent = (i === total - 1) ? "Ver resultado" : "Siguiente";
+  el("backBtn").disabled = i === 0;
+  el("nextBtn").disabled = STATE.answers[i] === null;
+  el("nextBtn").textContent = (i === total - 1) ? "Finalizar" : "Siguiente";
 }
 
-function score(){
-  const qList = STATE.data.questions;
+function getScore(){
   let correct = 0;
-  qList.forEach((q, i) => {
-    if (STATE.answers[i] === q.answerIndex) correct++;
+  STATE.data.questions.forEach((q, i) => {
+    if (q.correctAnswerIndex !== undefined &&
+        STATE.answers[i] === q.correctAnswerIndex) {
+      correct++;
+    }
   });
-  return { correct, total: qList.length, percent: Math.round((correct / qList.length) * 100) };
-}
-
-function routeFromPercent(p){
-  // MVP: 3 rutas
-  if (p >= 80) {
-  return {
-    title: "Ruta recomendada: Consolidación (Intermedio/Avanzado)",
-    desc: "Su base gramatical es sólida. Enfóquese en precisión, estructuras avanzadas y producción oral/escrita con retroalimentación.",
-    ctaText: "Ir a Recursos de Consolidación",
-    ctaUrl: "https://stepuplanguages.com/centro-de-recursos"
-  };
-}
-if (p >= 50) {
-  return {
-    title: "Ruta recomendada: Gramática funcional (Intermedio)",
-    desc: "Usted tiene una base útil, pero hay vacíos frecuentes. Trabaje tiempos verbales, conectores y estructuras comunes de trabajo.",
-    ctaText: "Ver ruta de Gramática Funcional",
-    ctaUrl: "https://stepuplanguages.com/diagnostico"
-  };
-}
-return {
-  title: "Ruta recomendada: Fundamentos (Básico)",
-  desc: "Usted necesita fortalecer estructuras base (to be, present simple, preguntas y negaciones). Con una ruta guiada, avanza más rápido.",
-  ctaText: "Agendar una llamada breve",
-ctaUrl: "https://wa.me/573167850234?text=Hola%2C%20realic%C3%A9%20el%20test%20de%20gram%C3%A1tica%20y%20quisiera%20una%20recomendaci%C3%B3n%20de%20ruta."
-};
-
+  return correct;
 }
 
 function showResult(){
-  const s = score();
-  el("scoreText").textContent = `Puntaje: ${s.correct}/${s.total} — ${s.percent}%`;
+  const score = getScore();
 
-  const r = routeFromPercent(s.percent);
-  el("routeTitle").textContent = r.title;
-  el("routeDesc").textContent = r.desc;
-  el("ctaBtn").textContent = r.ctaText;
-  el("ctaBtn").href = r.ctaUrl;
+  let routeText = "Con base en sus respuestas, le indicaremos por dónde empezar.";
+  if (score <= 2) {
+    routeText = "Usted puede iniciar desde la Lección 1, diseñada para personas que empiezan desde cero.";
+  } else if (score <= 4) {
+    routeText = "Usted cuenta con algunas bases. Recomendamos iniciar desde una lección intermedia para organizar su conocimiento.";
+  } else {
+    routeText = "Usted tiene una base funcional. Podemos ayudarle a consolidar y avanzar con mayor seguridad.";
+  }
+
+  el("routeTitle").textContent = "Ruta recomendada";
+  el("routeDesc").textContent = routeText;
+
+  el("ctaBtn").textContent = "Escribirme por WhatsApp";
+  el("ctaBtn").href =
+    "https://wa.me/573167850234?text=Hola%2C%20realic%C3%A9%20el%20Test%20de%20Ubicaci%C3%B3n%20y%20quisiera%20saber%20por%20d%C3%B3nde%20empezar.";
 
   el("card").classList.add("hidden");
   el("result").classList.remove("hidden");
@@ -125,18 +104,17 @@ function restart(){
 
 function bind(){
   el("backBtn").addEventListener("click", () => {
-    STATE.index = clamp(STATE.index - 1, 0, STATE.data.questions.length - 1);
+    STATE.index--;
     render();
   });
 
   el("nextBtn").addEventListener("click", () => {
-    const last = STATE.data.questions.length - 1;
-    if (STATE.index === last) {
+    if (STATE.index === STATE.data.questions.length - 1) {
       showResult();
-      return;
+    } else {
+      STATE.index++;
+      render();
     }
-    STATE.index = clamp(STATE.index + 1, 0, last);
-    render();
   });
 
   el("restartBtn").addEventListener("click", restart);
@@ -147,10 +125,8 @@ function bind(){
     await loadQuestions();
     bind();
     render();
-  }catch(err){
+  } catch (err){
     console.error(err);
-    el("questionTitle").textContent = "Error cargando el test.";
-    el("questionHint").textContent = "Verifica que questions.es.json exista en el repo.";
+    el("questionTitle").textContent = "Error al cargar el test.";
   }
 })();
-
