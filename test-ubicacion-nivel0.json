@@ -2,7 +2,7 @@
   "id": "test_ubicacion_nivel0",
   "title": "Test de Ubicación – Inglés desde Cero",
   "description": "Test corto para ubicar al estudiante y recomendar la lección de inicio.",
-  "duration_minutes": 3,
+  "duration_minutes": 5,
   "instructions": "Elige la opción que consideres correcta. Si no sabes la respuesta, puedes marcar 'No sé'.",
   "questions": [
     {
@@ -74,22 +74,70 @@
       "correctAnswerIndex": 1,
       "skill": "word_order"
     },
+
+    /* ---- BLOQUE DE COMPLEJIDAD MEDIA (GRAMÁTICA FUNCIONAL) ---- */
+
     {
       "id": 6,
       "type": "mcq",
-      "question": "Elige la frase correcta:",
+      "question": "Elige la opción correcta: She ____ to work every day.",
       "options": [
-        "Yesterday I worked.",
-        "Yesterday I work.",
-        "Yesterday I did work.",
-        "Yesterday I working.",
+        "go",
+        "goes",
+        "going",
+        "gone",
         "No sé"
       ],
-      "correctAnswerIndex": 0,
-      "skill": "past_simple"
+      "correctAnswerIndex": 1,
+      "skill": "present_simple_third_person"
     },
     {
       "id": 7,
+      "type": "mcq",
+      "question": "Elige la opción correcta: I ____ this movie before.",
+      "options": [
+        "see",
+        "saw",
+        "have seen",
+        "am seeing",
+        "No sé"
+      ],
+      "correctAnswerIndex": 2,
+      "skill": "present_perfect"
+    },
+    {
+      "id": 8,
+      "type": "mcq",
+      "question": "Elige la opción correcta: There ____ many people at the meeting.",
+      "options": [
+        "was",
+        "were",
+        "is",
+        "be",
+        "No sé"
+      ],
+      "correctAnswerIndex": 1,
+      "skill": "there_was_were"
+    },
+    {
+      "id": 9,
+      "type": "mcq",
+      "question": "Elige la opción correcta: I don’t have ____ time today.",
+      "options": [
+        "many",
+        "much",
+        "a few",
+        "several",
+        "No sé"
+      ],
+      "correctAnswerIndex": 1,
+      "skill": "much_many"
+    },
+
+    /* ---- AUTOPERCEPCIÓN (NO SE CALIFICA) ---- */
+
+    {
+      "id": 10,
       "type": "self_assessment",
       "question": "Cuando escuchas inglés, tú…",
       "options": [
@@ -102,19 +150,19 @@
     }
   ],
   "scoring": {
-    "max_score": 6,
+    "max_score": 9,
     "rules": [
       {
-        "range": [0, 2],
-        "recommendation": "Nivel 0 real — iniciar en Lección 1"
+        "range": [0, 3],
+        "recommendation": "Nivel inicial — iniciar desde la Lección 1"
       },
       {
-        "range": [3, 4],
-        "recommendation": "Bases desordenadas — iniciar en Lección 2 o 3"
+        "range": [4, 6],
+        "recommendation": "Bases funcionales — iniciar desde Lección 2 o 3"
       },
       {
-        "range": [5, 6],
-        "recommendation": "Bases funcionales — iniciar en Lección 4 o 5"
+        "range": [7, 9],
+        "recommendation": "Base sólida — iniciar desde Lección 4 o avanzar con consolidación"
       }
     ]
   }
