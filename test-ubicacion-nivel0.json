@@ -146,12 +146,16 @@
   "scoring": {
     "max_score": 9,
     "rules": [
-      { "range": [0, 3], "recommendation": "Nivel inicial — iniciar desde la Lección 1" },
-      { "range": [4, 6], "recommendation": "Bases funcionales — iniciar desde Lección 2 o 3" },
-      { "range": [7, 9], "recommendation": "Base sólida — iniciar desde Lección 4 o avanzar con consolidación" }
+      { "range": [0, 3], "recommendation": "Reconoce algunas estructuras básicas del inglés, pero aún no las usa con seguridad.
+Se recomienda iniciar el entrenamiento desde la Lección 1 para trabajar pronunciación, estructura y uso desde la base." },
+      { "range": [4, 6], "recommendation": "Reconoce estructuras básicas, pero presenta vacíos al usarlas en contexto real.
+Se recomienda iniciar el entrenamiento desde la Lección 1 para reforzar pronunciación y uso guiado del inglés." },
+      { "range": [7, 9], "recommendation": "Reconoce estructuras básicas, pero aún necesita entrenar pronunciación y uso en contexto.
+Se recomienda iniciar el entrenamiento desde la Lección 1 para transformar conocimiento pasivo en uso real del inglés." }
     ]
   }
 }
+
 
 
 
