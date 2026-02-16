@@ -90,7 +90,7 @@ let routeText = "Con base en sus respuestas, le indicaremos por dónde empezar."
 
 if (score <= 3) {
   routeText =
-    "Reconoce algunas estructuras básicas del inglés, pero aún no las usa con seguridad.\n" +
+    "Aún no reconoce algunas estructuras básicas del inglés o reconoce muy pocas.\n" +
     "Se recomienda iniciar el entrenamiento desde la Lección 1 para trabajar pronunciación, estructura y uso desde la base.";
 } else if (score <= 6) {
   routeText =
@@ -152,4 +152,5 @@ function bind(){
     el("questionTitle").textContent = "Error al cargar el test.";
   }
 })();
+
 
