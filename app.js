@@ -85,16 +85,22 @@ function showResult(){
     el("scoreText").textContent = `Respuestas correctas: ${score} de ${maxScore}`;
   }
 
-  // Texto de ruta (ajustado a 0–3, 4–6, 7–9)
-  let routeText = "Con base en sus respuestas, le indicaremos por dónde empezar.";
+ // Texto de ruta (ajustado a 0–3, 4–6, 7–9)
+let routeText = "Con base en sus respuestas, le indicaremos por dónde empezar.";
 
-  if (score <= 3) {
-    routeText = "Usted puede iniciar desde la Lección 1, diseñada para personas que empiezan desde cero.";
-  } else if (score <= 6) {
-    routeText = "Usted cuenta con algunas bases. Recomendamos iniciar desde una lección intermedia para organizar su conocimiento y avanzar con seguridad.";
-  } else {
-    routeText = "Usted tiene una base sólida. Podemos ayudarle a consolidar y avanzar con mayor precisión (fluidez, comprensión y uso natural).";
-  }
+if (score <= 3) {
+  routeText =
+    "Reconoce algunas estructuras básicas del inglés, pero aún no las usa con seguridad.\n" +
+    "Se recomienda iniciar el entrenamiento desde la Lección 1 para trabajar pronunciación, estructura y uso desde la base.";
+} else if (score <= 6) {
+  routeText =
+    "Reconoce estructuras básicas, pero presenta vacíos al usarlas en contexto real.\n" +
+    "Se recomienda iniciar el entrenamiento desde la Lección 1 para reforzar pronunciación y uso guiado del inglés.";
+} else {
+  routeText =
+    "Reconoce estructuras básicas, pero aún necesita entrenar pronunciación y uso en contexto.\n" +
+    "Se recomienda iniciar el entrenamiento desde la Lección 1 para transformar conocimiento pasivo en uso real del inglés.";
+}
 
   el("routeTitle").textContent = "Ruta recomendada";
   el("routeDesc").textContent = routeText;
@@ -146,3 +152,4 @@ function bind(){
     el("questionTitle").textContent = "Error al cargar el test.";
   }
 })();
+
